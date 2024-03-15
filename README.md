@@ -6,7 +6,7 @@ First, run the development server:
 npm run dev
 ```
 
-Next, open this URL in your browser to simulate an XSS attack on the website:
+Next, open this URL in your browser (submit form with random data) to simulate an XSS attack on the website:
 
 ```
 localhost:3000/auth?redirect-url=javascript%3Aalert%28%27xss%27%29
