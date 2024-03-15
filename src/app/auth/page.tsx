@@ -13,7 +13,7 @@ export default function Auth() {
                 onSubmit={async (event) => {
                     event.preventDefault();
                     window.document.cookie = "login-state=myCookieValue;"
-                    push(searchParams.get("redirect-path") ?? "/")
+                    push(searchParams?.get("redirect-url") ?? "/")
                 }}
                 className={"flex flex-col gap-2"}
             >
