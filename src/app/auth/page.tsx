@@ -1,12 +1,10 @@
 "use client"
 import {useSearchParams} from "next/navigation";
 import {useRouter} from "next/navigation";
-import {useBearStore} from "@/login-state";
 
 export default function Auth() {
     const searchParams = useSearchParams()
     const {push} = useRouter()
-    const {setLoginState} = useBearStore();
 
     return (
         <main className="flex min-h-screen flex-col items-center justify-between p-24">
