@@ -1,6 +1,5 @@
 import {NextResponse} from 'next/server'
 import type {NextRequest} from 'next/server'
-import {useBearStore} from "@/login-state";
 
 // This function can be marked `async` if using `await` inside
 export function middleware(request: NextRequest) {
@@ -9,7 +8,7 @@ export function middleware(request: NextRequest) {
     if (!loginState?.value) {
         const url = new URL('/auth', request.url);
         const params = new URLSearchParams(url.search);
-        params.set("redirect-path", request.nextUrl.pathname)
+        params.set("redirect-url", request.nextUrl.pathname)
         url.search = params.toString();
         return NextResponse.redirect(url)
     } else {
